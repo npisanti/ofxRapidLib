@@ -16,6 +16,8 @@
 #include "emscripten/knnEmbindings.h"
 #endif
 
+namespace rapidlib {
+
 template<typename T>
 knnClassification<T>::knnClassification(const int &num_inputs, const std::vector<int> &which_inputs, const std::vector<trainingExampleTemplate<T> > &_neighbours, const int k)
 : numInputs(num_inputs),
@@ -167,3 +169,5 @@ void knnClassification<T>::getJSONDescription(Json::Value &jsonModelDescription)
 //explicit instantiation
 template class knnClassification<double>;
 template class knnClassification<float>;
+
+} // end namespace

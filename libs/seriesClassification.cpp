@@ -18,6 +18,8 @@
 
 #define SEARCH_RADIUS 1
 
+namespace rapidlib {
+
 template<typename T>
 seriesClassificationTemplate<T>::seriesClassificationTemplate() : hopSize(1), counter(0) {};
 
@@ -218,6 +220,7 @@ typename seriesClassificationTemplate<T>::template minMax<T> seriesClassificatio
 template class seriesClassificationTemplate<double>;
 template class seriesClassificationTemplate<float>;
 
+} // end namespace
 
 //
 //std::vector<T> seriesClassification::getCosts(const std::vector<trainingExample> &trainingSet) {

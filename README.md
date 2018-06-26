@@ -1,3 +1,7 @@
+### fork foreworkd:
+This is my personal fork of ofxRapidLib, i will upload my exercises here. It will also differ from the original as the classes use the namespace `rapidlib` and i will use ofxPDSP instead of ofxMaxim.
+
+
 ![alt text](ofxaddons_thumbnail.png "rapidmix")  
 
 # ofxRapidLib

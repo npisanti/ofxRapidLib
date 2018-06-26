@@ -10,6 +10,8 @@
 #include "fastDTW.h"
 #include "dtw.h"
 
+namespace rapidlib {
+
 template<typename T>
 fastDTW<T>::fastDTW() {};
 
@@ -73,3 +75,5 @@ inline std::vector<std::vector<T> > fastDTW<T>::downsample(const std::vector<std
 //explicit instantiation
 template class fastDTW<double>;
 template class fastDTW<float>;
+
+} // end namespace

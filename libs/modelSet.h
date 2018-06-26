@@ -6,8 +6,7 @@
 //  Copyright © 2016 Goldsmiths. All rights reserved.
 //
 
-#ifndef modelSet_h
-#define modelSet_h
+#pragma once
 
 #include <vector>
 #include "trainingExample.h"
@@ -18,6 +17,8 @@
 #ifndef EMSCRIPTEN
 #include "../dependencies/json/json.h"
 #endif
+
+namespace rapidlib {
 
 /** This class holds a set of models with the same or different algorithms. */
 template<typename T>
@@ -57,4 +58,4 @@ private:
 #endif
 };
 
-#endif
+} // end namespace

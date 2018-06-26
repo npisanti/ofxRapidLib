@@ -5,12 +5,13 @@
  * @copyright Copyright © 2017 Goldsmiths. All rights reserved.
  */
 
-#ifndef rapidStream_h
-#define rapidStream_h
+#pragma once
 
 #include <stdint.h>
 #include <atomic>
 #include "../dependencies/bayesfilter/BayesianFilter.h"
+
+namespace rapidlib {
 
 template<typename T>
 class rapidStream {
@@ -121,5 +122,4 @@ private:
     BayesianFilter bayesFilt;
 };
 
-
-#endif
+} // end namespace

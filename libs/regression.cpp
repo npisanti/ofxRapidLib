@@ -12,6 +12,7 @@
 #include <time.h>
 #include "regression.h"
 
+namespace rapidlib {
 
 #ifdef EMSCRIPTEN
 #include "emscripten/regressionEmbindings.h"
@@ -183,3 +184,5 @@ bool regressionTemplate<T>::train(const std::vector<trainingExampleTemplate<T> >
 //explicit instantiation
 template class regressionTemplate<double>;
 template class regressionTemplate<float>;
+
+} // end namespace

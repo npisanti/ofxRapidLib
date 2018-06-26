@@ -7,12 +7,13 @@
  * @copyright Copyright © 2017 Goldsmiths. All rights reserved.
  */
 
-#ifndef svm_h
-#define svm_h
+#pragma once
 
 #include <vector>
 #include "baseModel.h"
 #include "../dependencies/libsvm/libsvm.h"
+
+namespace rapidlib {
 
 template<typename T>
 class svmClassification final : public baseModel<T> {
@@ -125,9 +126,5 @@ private:
     bool trained;
 };
 
-#endif
-
-
-
-
+} // end namespace
 

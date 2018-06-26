@@ -19,6 +19,8 @@
 #include "emscripten/modelSetEmbindings.h"
 #endif
 
+namespace rapidlib {
+
 /** No arguments, don't create any models yet */
 template<typename T>
 modelSet<T>::modelSet() :
@@ -243,3 +245,4 @@ bool modelSet<T>::readJSON(const std::string &filepath) {
 template class modelSet<double>;
 template class modelSet<float>;
 
+} // end namespace

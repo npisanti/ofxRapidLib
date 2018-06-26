@@ -13,6 +13,8 @@
 #include "emscripten/svmEmbindings.h"
 #endif
 
+namespace rapidlib {
+
 template<typename T>
 svmClassification<T>::svmClassification(
                                         KernelType kernelType,
@@ -267,3 +269,5 @@ void svmClassification<T>::getJSONDescription(Json::Value &currentModel){
 //explicit instantiation
 template class svmClassification<double>;
 template class svmClassification<float>;
+
+} // end namespace

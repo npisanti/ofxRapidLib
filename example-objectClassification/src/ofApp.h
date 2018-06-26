@@ -3,7 +3,7 @@
 #include <vector>
 #include "ofMain.h"
 #include "ofxRapidLib.h"
-#include "ofxMaxim.h"
+//#include "ofxMaxim.h"
 
 class ofApp : public ofBaseApp{
     
@@ -42,6 +42,7 @@ public:
     
     //-----MAXI-----//
 
+    /*
     int bufferSize;
     int	initialBufferSize;
     int sampleRate;
@@ -55,6 +56,6 @@ public:
     int playHead;
     
     maxiSample gam_1, gam_3, gam_4, gam_5, gam_6, gam_7;
-   
+   */
     
 };

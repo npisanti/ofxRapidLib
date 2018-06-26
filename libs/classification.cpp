@@ -13,12 +13,15 @@
 #include "emscripten/classificationEmbindings.h"
 #endif
 
+namespace rapidlib {
+
 template<typename T>
 classificationTemplate<T>::classificationTemplate() {
     modelSet<T>::numInputs = -1;
     modelSet<T>::numOutputs = -1;
     modelSet<T>::created = false;
     classificationType = knn; //this is the default algorithm
+    K = 1;
 };
 
 template<typename T>
@@ -83,7 +86,7 @@ bool classificationTemplate<T>::train(const std::vector<trainingExampleTemplate<
             if (classificationType == svm) {
                 modelSet<T>::myModelSet.push_back(new svmClassification<T>(modelSet<T>::numInputs));
             } else {
-                modelSet<T>::myModelSet.push_back(new knnClassification<T>(modelSet<T>::numInputs, whichInputs, training_set, 1));
+                modelSet<T>::myModelSet.push_back(new knnClassification<T>(modelSet<T>::numInputs, whichInputs, training_set, K));
             }
         }
         modelSet<T>::created = true;
@@ -93,21 +96,30 @@ bool classificationTemplate<T>::train(const std::vector<trainingExampleTemplate<
 }
 
 template<typename T>
-std::vector<int> classificationTemplate<T>::getK() {
-    std::vector<int> kVector;
-    for (baseModel<T>* model : modelSet<T>::myModelSet) {
-        knnClassification<T>* kNNModel = dynamic_cast<knnClassification<T>*>(model); //FIXME: I really dislike this design
-        kVector.push_back(kNNModel->getK());
-    }
-    return kVector;
+int classificationTemplate<T>::getK()  const{
+    return K;
 }
 
 template<typename T>
 void classificationTemplate<T>::setK(const int whichModel, const int newK) {
-    knnClassification<T>* kNNModel = dynamic_cast<knnClassification<T>*>(modelSet<T>::myModelSet[whichModel]); //FIXME: I really dislike this design
-    kNNModel->setK(newK);
+    if( modelSet<T>::created ){
+        knnClassification<T>* kNNModel = dynamic_cast<knnClassification<T>*>(modelSet<T>::myModelSet[whichModel]); //FIXME: I really dislike this design
+        kNNModel->setK(newK);        
+    }
+    K = newK;
+}
+
+template<typename T>
+void classificationTemplate<T>::setK( const int newK ) {
+    if( modelSet<T>::created && classificationType == knn ){
+        knnClassification<T>* kNNModel = dynamic_cast<knnClassification<T>*>(modelSet<T>::myModelSet[knn]); //FIXME: I really dislike this design
+        kNNModel->setK(newK);        
+    }
+    K = newK;
 }
 
 //explicit instantiation
 template class classificationTemplate<double>;
 template class classificationTemplate<float>;
+
+} // end namespace

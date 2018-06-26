@@ -14,6 +14,8 @@
 #include "emscripten/rapidStreamEmbindings.h"
 #endif
 
+namespace rapidlib {
+
 template<typename T>
 rapidStream<T>::rapidStream (int window_size) {
     windowSize = window_size;
@@ -243,3 +245,4 @@ T rapidStream<T>::maxAcceleration() const {
 template class rapidStream<double>;
 template class rapidStream<float>;
 
+} // end namespace

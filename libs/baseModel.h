@@ -8,8 +8,7 @@
  */
 
 
-#ifndef baseModel_h
-#define baseModel_h
+#pragma once
 
 #include <vector>
 #include "trainingExample.h"
@@ -37,6 +36,7 @@ namespace std
 }
 #endif
 
+namespace rapidlib {
 
 /** Base class for wekinator models. Implemented by NN and KNN classes */
 template<typename T>
@@ -64,4 +64,5 @@ protected:
 #endif
     
 };
-#endif
+
+} // end namespace

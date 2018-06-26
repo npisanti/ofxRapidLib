@@ -6,10 +6,11 @@
  * @copyright Copyright © 2017 Goldsmiths. All rights reserved.
  */
 
-#ifndef warpPath_h
-#define warpPath_h
+#pragma once
 
 #include <vector>
+
+namespace rapidlib {
 
 /** Class to hold warp paths through a cost matrix */
 class warpPath {
@@ -33,4 +34,4 @@ public:
     
 };
 
-#endif /* warpPath_h */
+} // end namespace

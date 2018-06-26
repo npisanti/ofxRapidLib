@@ -6,8 +6,7 @@
 //  Copyright © 2016 Goldsmiths. All rights reserved.
 //
 
-#ifndef classification_h
-#define classification_h
+#pragma once
 
 #include <vector>
 #include "modelSet.h"
@@ -16,6 +15,8 @@
  *
  * This doesn't do anything modelSet can't do. But, it's simpler and more like wekinator.
  */
+
+namespace rapidlib {
 
 template<typename T>
 class classificationTemplate final : public modelSet<T> {
@@ -40,18 +41,21 @@ public:
     bool train(const std::vector<trainingExampleTemplate<T> > &trainingSet) override;
     
     /** Check the K values for each model. This feature is temporary, and will be replaced by a different design. */
-    std::vector<int> getK();
+    int getK() const;
     /** Get the K values for each model. This feature is temporary, and will be replaced by a different design. */
     void setK(const int whichModel, const int newK);
+    
+    void setK( const int newK );
     
     
     
 private:
     classificationTypes classificationType;
+    int K;
 };
 
 //This is here so that the old API still works as expected.
 using classification = classificationTemplate<double>;
 using classificationFloat = classificationTemplate<float>;
 
-#endif
+} // end namespace

@@ -21,9 +21,10 @@ void ofApp::setup(){
     
     ofEnableAlphaBlending();
     
-    sampleRate 	= 44100; /* Sampling Rate */
-    bufferSize	= 512; /* Buffer Size. you have to fill this buffer with sound using the for loop in the audioOut method */
+    //sampleRate 	= 44100; /* Sampling Rate */
+    //bufferSize	= 512; /* Buffer Size. you have to fill this buffer with sound using the for loop in the audioOut method */
     
+    /*
     gam_1.load(ofToDataPath("261938__digitopia-cdm__saron-sdpl1.wav"));
     gam_3.load(ofToDataPath("261730__digitopia-cdm__saron-sdpl3.wav"));
     gam_4.load(ofToDataPath("261927__digitopia-cdm__saron-sdpl4.wav"));
@@ -31,9 +32,10 @@ void ofApp::setup(){
     gam_6.load(ofToDataPath("261968__digitopia-cdm__saron-sdpl6.wav"));
     gam_7.load(ofToDataPath("261883__digitopia-cdm__saron-sdpl7.wav"));
     
+    */
+    //ofxMaxiSettings::setup(sampleRate, 2, initialBufferSize);
+    //ofSoundStreamSetup(2,0,this, sampleRate, bufferSize, 4); /* this has to happen at the end of setup - it switches on the DAC */
     
-    ofxMaxiSettings::setup(sampleRate, 2, initialBufferSize);
-    ofSoundStreamSetup(2,0,this, sampleRate, bufferSize, 4); /* this has to happen at the end of setup - it switches on the DAC */
 }
 
 //--------------------------------------------------------------
@@ -133,7 +135,7 @@ void ofApp::draw(){
     }
 }
 
-
+/*
 //--------------------------------------------------------------
 void ofApp::audioOut(float * output, int bufferSize, int nChannels) {
     for (int i = 0; i < bufferSize; ++i){
@@ -197,7 +199,7 @@ void ofApp::audioOut(float * output, int bufferSize, int nChannels) {
     
 }
 
-
+*/
 //--------------------------------------------------------------
 void ofApp::keyPressed  (int key){
     

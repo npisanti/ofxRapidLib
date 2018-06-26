@@ -7,11 +7,12 @@
  * @copyright Copyright © 2016 Goldsmiths. All rights reserved.
  */
 
-#ifndef regression_h
-#define regression_h
+#pragma once
 
 #include <vector>
 #include "modelSet.h"
+
+namespace rapidlib {
 
 /*! Class for implementing a set of regression models.
  *
@@ -62,4 +63,4 @@ private:
 using regression = regressionTemplate<double>;
 using regressionFloat = regressionTemplate<float>;
 
-#endif
+} // end namespace

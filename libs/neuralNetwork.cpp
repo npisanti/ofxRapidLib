@@ -16,6 +16,8 @@
 #include "emscripten/nnEmbindings.h"
 #endif
 
+namespace rapidlib {
+
 template<typename T>
 void neuralNetwork<T>::initTrainer() {
     //initialize deltas
@@ -459,3 +461,5 @@ void neuralNetwork<T>::updateWeights() {
 //explicit instantiation
 template class neuralNetwork<double>;
 template class neuralNetwork<float>;
+
+} // end namespace

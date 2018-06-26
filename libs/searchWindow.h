@@ -6,12 +6,13 @@
  * @copyright Copyright © 2017 Goldsmiths. All rights reserved.
  */
 
-#ifndef searchWindow_h
-#define searchWindow_h
+#pragma once
 
 #include <vector>
 #include "warpPath.h"
 
+namespace rapidlib {
+    
 /** For fastDTW, a window of cells to calculate costs for.
  * These are cells within a specified search radius of a lower resolution path.
  */
@@ -31,4 +32,4 @@ private:
     void expandWindow(int searchRadius);
 };
 
-#endif /* searchWindow_h */
+} // end namespace

@@ -13,6 +13,8 @@
 #include <limits>
 #include "dtw.h"
 
+namespace rapidlib {
+
 template<typename T>
 dtw<T>::dtw() {};
 
@@ -152,3 +154,5 @@ warpInfo dtw<T>::constrainedDTW(const std::vector<std::vector<T> > &seriesX, con
 //explicit instantiation
 template class dtw<double>;
 template class dtw<float>;
+
+} // end namespace

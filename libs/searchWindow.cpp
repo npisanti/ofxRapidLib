@@ -9,6 +9,8 @@
 #include <limits>
 #include "searchWindow.h"
 
+namespace rapidlib {
+
 template<typename T>
 searchWindow<T>::searchWindow(const int seriesXSize, const int seriesYSize, const warpPath &shrunkenWarpPath, const int searchRadius) : minMaxValues(seriesXSize, std::make_pair(-1, 0)), maxY(seriesYSize - 1) {
     
@@ -177,3 +179,5 @@ void searchWindow<T>::expandWindow(int radius) {
 //explicit instantiation
 template class searchWindow<double>;
 template class searchWindow<float>;
+
+} // end namespace

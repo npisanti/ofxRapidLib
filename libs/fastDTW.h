@@ -6,11 +6,12 @@
  * @copyright Copyright © 2017 Goldsmiths. All rights reserved.
  */
 
-#ifndef fastDTW_h
-#define fastDTW_h
+#pragma once
 
 #include <vector>
 #include "warpPath.h"
+
+namespace rapidlib {
 
 /** Class for performing an fast dynamic time warping between two time series*/
 template<typename T>
@@ -57,5 +58,4 @@ private:
     
 };
 
-
-#endif /* fastDTW_h */
+} // end namespace

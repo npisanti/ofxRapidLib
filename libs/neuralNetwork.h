@@ -6,8 +6,8 @@
  * @copyright Copyright © 2016 Goldsmiths. All rights reserved.
  */
 
-#ifndef neuralNetwork_h
-#define neuralNetwork_h
+#pragma once
+
 #include <vector>
 #include "baseModel.h"
 
@@ -18,6 +18,8 @@
 #define LEARNING_RATE 0.3
 #define MOMENTUM 0.2
 #define NUM_EPOCHS 500
+
+namespace rapidlib {
 
 /*! Class for implementing a Neural Network.
  *
@@ -150,4 +152,4 @@ private:
     void updateWeights();
 };
 
-#endif
+} // end namespace

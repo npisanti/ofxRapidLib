@@ -7,11 +7,12 @@
  * @copyright Copyright © 2016 Goldsmiths. All rights reserved.
  */
 
-#ifndef trainingExample_h
-#define trainingExample_h
+#pragma once
 
 #include <vector>
 #include <string>
+
+namespace rapidlib {
 
 /** This is used by both NN and KNN models for training */
 template<typename T>
@@ -35,4 +36,4 @@ struct trainingSeriesTemplate {
 using trainingSeries = trainingSeriesTemplate<double> ;
 using trainingSeriesFloat = trainingSeriesTemplate<float>;
 
-#endif
+} // end namespace

@@ -7,8 +7,7 @@
  * @copyright Copyright © 2017 Goldsmiths. All rights reserved.
  */
 
-#ifndef seriesClassification_hpp
-#define seriesClassification_hpp
+#pragma once
 
 #include <vector>
 #include <string>
@@ -20,6 +19,8 @@
  *
  * Currently only (fast)DTW.
  */
+
+namespace rapidlib {
 
 template<typename T>
 class seriesClassificationTemplate final {
@@ -120,4 +121,4 @@ private:
 using seriesClassification = seriesClassificationTemplate<double>;
 using seriesClassificationFloat = seriesClassificationTemplate<float>;
 
-#endif
+} // end namespace
